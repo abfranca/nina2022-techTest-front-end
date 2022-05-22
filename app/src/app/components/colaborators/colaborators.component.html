@@ -1,0 +1,103 @@
+<h2>List of Colaborators</h2>
+
+<div class="item">
+    <input type="checkbox" id="filtering" [(ngModel)]="filtering" (click)="getColaborators()">
+    <label for="filtering">Filter by:</label>
+</div>
+
+<div class="item" *ngIf="filtering">
+    <input type="checkbox" id="filteringById" [(ngModel)]="byId" (click)="getColaborators()">
+    <label for="filteringById">ID: </label>
+    <label for="minId" *ngIf="byId">Min: </label>
+    <input type="number" *ngIf="byId" id="minId" [(ngModel)]="minId" (change)="getColaborators()">
+    <label for="maxId" *ngIf="byId">Max: </label>
+    <input type="number" *ngIf="byId" id="maxId" [(ngModel)]="maxId" (change)="getColaborators()">
+
+    <input type="checkbox" id="filteringByName" [(ngModel)]="byName" (click)="getColaborators()">
+    <label for="filteringByName">Name: </label>
+    <input type="text" *ngIf="byName" id="nameToFind" [(ngModel)]="nameToFind" (change)="getColaborators()">
+
+    <input type="checkbox" id="filteringByEmail" [(ngModel)]="byEmail" (click)="getColaborators()">
+    <label for="filteringByEmail">Email: </label>
+    <input type="text" *ngIf="byEmail" id="emailToFind" [(ngModel)]="emailToFind" (change)="getColaborators()">
+
+    <input type="checkbox" id="filteringByRole" [(ngModel)]="byRole" (click)="getColaborators()">
+    <label for="filteringByRole">Role: </label>
+    <select id="roleToFind" [(ngModel)]="roleToFind" *ngIf="byRole" (change)="getColaborators()">
+        <option [value]="role.name" *ngFor="let role of roles">{{role.name}}</option>
+    </select>
+
+    <input type="checkbox" id="filteringByStatus" [(ngModel)]="byStatus" (click)="getColaborators()">
+    <label for="filteringByStatus">Status: </label>
+    <select id="statusToFind" [(ngModel)]="statusToFind" *ngIf="byStatus" (change)="getColaborators()">
+        <option [value]="status.name" *ngFor="let status of statuses">{{status.name}}</option>
+    </select>
+
+    <input type="checkbox" id="filteringByCreate" [(ngModel)]="byCreate" (click)="getColaborators()">
+    <label for="filteringByCreate">Date of creation: </label>
+    <input id="createDate" type="date" *ngIf="byCreate" [(ngModel)]="createDate" (change)="getColaborators()">
+
+    <input type="checkbox" id="filteringByUpdate" [(ngModel)]="byUpdate" (click)="getColaborators()">
+    <label for="filteringByUpdate">Last update: </label>
+    <input id="updateDate" type="date" *ngIf="byUpdate" [(ngModel)]="updateDate" (change)="getColaborators()">
+
+    <input type="checkbox" id="filteringByDeliveries" [(ngModel)]="byDeliveries" (click)="getColaborators()">
+    <label for="filteringByDeliveries">Deliveries made: </label>
+    <label for="minDeliveries" *ngIf="byDeliveries">Min: </label>
+    <input type="number" *ngIf="byDeliveries" id="minDeliveries" [(ngModel)]="minDeliveries"
+        (change)="getColaborators()">
+    <label for="maxDeliveries" *ngIf="byDeliveries">Max: </label>
+    <input type="number" *ngIf="byDeliveries" id="maxDeliveries" [(ngModel)]="maxDeliveries"
+        (change)="getColaborators()">
+</div>
+
+<div class="item">
+    <input type="checkbox" id="sorting" [(ngModel)]="sorting" (click)="getColaborators()">
+    <label for="sorting">Sort by:</label>
+</div>
+
+<div class="item" *ngIf="sorting">
+    <input type="radio" id="sortById" name="sortBy" [value]="1" [(ngModel)]="sortCriteria" (click)="getColaborators()">
+    <label for="sortById">ID</label>
+
+    <input type="radio" id="sortByName" name="sortBy" [value]="2" [(ngModel)]="sortCriteria"
+        (click)="getColaborators()">
+    <label for="sortByName">Name</label>
+
+    <input type="radio" id="sortByEmail" name="sortBy" [value]="3" [(ngModel)]="sortCriteria"
+        (click)="getColaborators()">
+    <label for="sortByEmail">Email</label>
+
+    <input type="radio" id="sortByRole" name="sortBy" [value]="4" [(ngModel)]="sortCriteria"
+        (click)="getColaborators()">
+    <label for="sortByRole">Role</label>
+
+    <input type="radio" id="sortByStatus" name="sortBy" [value]="5" [(ngModel)]="sortCriteria"
+        (click)="getColaborators()">
+    <label for="sortByStatus">Status</label>
+
+    <input type="radio" id="sortByCreate" name="sortBy" [value]="6" [(ngModel)]="sortCriteria"
+        (click)="getColaborators()">
+    <label for="sortByCreate">Date of creation</label>
+
+    <input type="radio" id="sortByUpdate" name="sortBy" [value]="7" [(ngModel)]="sortCriteria"
+        (click)="getColaborators()">
+    <label for="sortByUpdate">Last update</label>
+
+    <input type="radio" id="sortByDeliveries" name="sortBy" [value]="8" [(ngModel)]="sortCriteria"
+        (click)="getColaborators()">
+    <label for="sortByDeliveries">Deliveries made</label>
+</div>
+
+<ul class="colaborators">
+    <li *ngFor="let colaborator of colaborators">
+        <a routerLink="/detail/{{colaborator.id}}">
+            <span class="badge">{{colaborator.id}}</span> {{colaborator.name}}
+        </a>
+    </li>
+</ul>
+
+<div class="item">
+    <button type="button" (click)="goBack()">Back</button>
+    <button type="button" (click)="goAdd()">Register Colaborator</button>
+</div>

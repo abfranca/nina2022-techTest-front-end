@@ -1,0 +1,144 @@
+{
+  "colaborators": [
+    {
+      "name": "Ana Maria",
+      "role": "Deliverer",
+      "status": "Active",
+      "deliveriesMade": "20",
+      "deliveriesInProgress": 0,
+      "createdAt": "21/05/2021 15:29:33",
+      "updatedAt": "22/05/2022 01:56:19",
+      "deleted": false,
+      "id": 1,
+      "email": "a@hotmail.com"
+    },
+    {
+      "name": "Maria",
+      "role": "Driver",
+      "status": "Vacation",
+      "deliveriesMade": 0,
+      "deliveriesInProgress": "2",
+      "createdAt": "22/05/2020 15:29:51",
+      "updatedAt": "21/05/2022 17:30:36",
+      "deleted": false,
+      "id": 2,
+      "email": "m@hotmail.com"
+    },
+    {
+      "name": "Dona",
+      "role": "Manager",
+      "status": "Vacation",
+      "deliveriesMade": 0,
+      "deliveriesInProgress": 0,
+      "createdAt": "21/05/2022 17:06:37",
+      "updatedAt": "21/05/2022 17:33:24",
+      "deleted": true,
+      "id": 3,
+      "email": "d@hotmail.com"
+    },
+    {
+      "name": "Bruno",
+      "role": "Deliverer",
+      "status": "Active",
+      "deliveriesMade": 0,
+      "deliveriesInProgress": 0,
+      "createdAt": "21/05/2022 17:24:34",
+      "updatedAt": "21/05/2022 17:24:34",
+      "deleted": false,
+      "id": 4,
+      "email": "b@hotmail.com"
+    },
+    {
+      "name": "Fernanda",
+      "role": "Driver",
+      "status": "Active",
+      "deliveriesMade": "12",
+      "deliveriesInProgress": "1",
+      "createdAt": "21/05/2022 18:09:23",
+      "updatedAt": "21/05/2022 18:09:23",
+      "deleted": false,
+      "id": 5,
+      "email": "f@hotmail.com"
+    },
+    {
+      "name": "Carlos",
+      "role": "Driver",
+      "status": "Inactive",
+      "deliveriesMade": "101",
+      "deliveriesInProgress": 0,
+      "createdAt": "21/05/2022 18:16:38",
+      "updatedAt": "21/05/2022 18:16:38",
+      "deleted": false,
+      "id": 6,
+      "email": "c1@hotmail.com"
+    },
+    {
+      "name": "Carlos",
+      "role": "Manager",
+      "status": "Vacation",
+      "deliveriesMade": 0,
+      "deliveriesInProgress": 0,
+      "createdAt": "21/05/2022 18:17:23",
+      "updatedAt": "21/05/2022 18:17:23",
+      "deleted": false,
+      "id": 7,
+      "email": "c2@hotmail.com"
+    },
+    {
+      "name": "Lucas",
+      "email": "lc@gmail.com",
+      "role": "Manager",
+      "status": "Active",
+      "deliveriesMade": 0,
+      "deliveriesInProgress": 0,
+      "createdAt": "21/05/2022 21:34:23",
+      "updatedAt": "21/05/2022 21:44:40",
+      "deleted": false,
+      "id": 8
+    },
+    {
+      "name": "Victor Campos",
+      "email": "vc_@uol.com.br",
+      "role": "Deliverer",
+      "status": "Active",
+      "deliveriesMade": "8",
+      "deliveriesInProgress": "2",
+      "createdAt": "22/05/2022 01:57:47",
+      "updatedAt": "22/05/2022 01:57:47",
+      "deleted": false,
+      "id": 9
+    }
+  ],
+  "roles": [
+    {
+      "id": 1,
+      "name": "Deliverer"
+    },
+    {
+      "id": 2,
+      "name": "Driver"
+    },
+    {
+      "id": 3,
+      "name": "Manager"
+    },
+    {
+      "id": 4,
+      "name": "Administrator"
+    }
+  ],
+  "status": [
+    {
+      "id": 1,
+      "name": "Active"
+    },
+    {
+      "id": 2,
+      "name": "Vacation"
+    },
+    {
+      "id": 3,
+      "name": "Inactive"
+    }
+  ]
+}

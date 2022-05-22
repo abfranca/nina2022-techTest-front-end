@@ -1,0 +1,18 @@
+/* AppComponent's private CSS styles */
+h1 {
+    color: black;
+    padding-left: 1rem;
+}
+
+h1:hover {
+    text-decoration: underline;
+    color: white;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #731aeb;
+}

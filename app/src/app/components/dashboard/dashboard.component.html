@@ -1,0 +1,6 @@
+<h2>Colaborators Dashboard</h2>
+<div class="colaborators-menu">
+    <a *ngFor="let colaborator of colaborators" routerLink="/detail/{{colaborator.id}}">
+        {{colaborator.name}}
+    </a>
+</div>
