@@ -1,69 +1,282 @@
-/* ColaboratorsComponent's private CSS styles */
-.colaborators {
-  margin: 0 0 2em 0;
-  list-style-type: none;
-  padding: 0;
-  padding-left: 1rem;
-  width: 15em;
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
 }
 
-.colaborators li {
-  position: relative;
+.container h2 {
+  color: #731aeb;
+  padding-left: 1rem;
+}
+
+.container .options {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.container .options .selector {
+  margin-left: 15px;
+  display: flex;
+  flex-direction: row;
+}
+
+.container .options .selector input {
+  margin-left: 0;
+}
+
+.container .options .selections {
+  margin-left: 15px;
+  display: flex;
+  flex-direction: row;
+}
+
+.container .options .selections .option {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+  min-width: fit-content;
+}
+
+.container .options .selections .option input {
+  margin-bottom: 5px;
+}
+
+.container .options .selections .option select {
+  margin-bottom: 5px;
+}
+
+.container .options .selections .option .selector {
+  display: flex;
+  flex-direction: row;
+  margin-left: 0;
+}
+
+.container .options .selections .option .innerSelector {
+  display: flex;
+  flex-direction: row;
+  margin-left: 0;
+}
+
+.container .options .selections .option .innerSelector .labels {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0;
+  justify-content: space-between;
+}
+
+.container .options .selections .option .innerSelector .labels label {
+  margin: 0;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.container .options .selections .option .innerSelector .values {
+  display: flex;
+  flex-direction: column;
+}
+
+.container .options .selections .option .innerSelector .values input {
+  margin: 0;
+  margin-bottom: 5px;
+  width: fit-content;
+}
+
+.container .options .selections input {
+  margin-left: 0;
+}
+
+.container .options .selections label {
+  margin-right: 10px;
+}
+
+.container .pageSelector {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 15px;
+  align-items: center;
+}
+
+.container .pageSelector label {
+  margin-right: 10px;
+}
+
+.container .pageSelector button {
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.colaborators {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+  margin-bottom: 15px;
+}
+
+.colaborators .core {
+  display: flex;
+  flex-direction: row;
+  background-color: whitesmoke;
+}
+
+.colaborators .core:hover {
+  background-color: gray;
+}
+
+.colaborators .core .checkbox {
+  margin-top: 5px;
+  margin-left: 0px;
+}
+
+.colaborators .coreInside {
+  display: flex;
+  flex-direction: row;
+  font-size: smaller;
+}
+
+.colaborators .coreInside:hover {
   cursor: pointer;
 }
 
-.colaborators li:hover {
-  left: .1em;
-}
-
-.colaborators a {
-  color: #333;
-  text-decoration: none;
-  background-color: #EEE;
-  margin: .5em;
-  padding: .3em 0;
-  height: 1.6em;
-  border-radius: 4px;
+.colaborators .coreInside .colaboratorId {
   display: block;
-  width: 100%;
+  width: 30px;
+  height: 20px;
+  padding-top: 5px;
 }
 
-.colaborators a:hover {
-  color: #2c3a41;
-  background-color: #e6e6e6;
+.colaborators .coreInside .colaboratorName {
+  display: block;
+  width: 150px;
+  height: 20px;
+  padding-top: 5px;
 }
 
-.colaborators a:active {
-  background-color: #525252;
-  color: #fafafa;
+.colaborators .coreInside .colaboratorEmail {
+  display: block;
+  width: 200px;
+  height: 20px;
+  padding-top: 5px;
 }
 
-.colaborators .badge {
-  display: inline-block;
-  font-size: small;
-  color: white;
-  padding: 0.8em 0.7em 0 0.7em;
-  background-color: #405061;
-  line-height: 1em;
-  position: relative;
-  left: -1px;
-  top: -4px;
-  height: 1.8em;
-  min-width: 16px;
-  text-align: right;
-  margin-right: .8em;
-  border-radius: 4px 0 0 4px;
+.colaborators .coreInside .colaboratorRole {
+  display: block;
+  width: 100px;
+  height: 20px;
+  padding-top: 5px;
 }
 
-.item {
-  width:max-content;
+.colaborators .coreInside .colaboratorStatus {
+  display: block;
+  width: 80px;
+  height: 20px;
+  padding-top: 5px;
+}
+
+.colaborators .coreInside .colaboratorCreation {
+  display: block;
+  width: 150px;
+  height: 20px;
+  padding-top: 5px;
+}
+
+.colaborators .coreInside .colaboratorUpdate {
+  display: block;
+  width: 150px;
+  height: 20px;
+  padding-top: 5px;
+}
+
+.colaborators .coreInside .colaboratorDeliveries {
+  display: block;
+  width: 100px;
+  height: 20px;
+  padding-top: 5px;
+}
+
+.colaborators .coreInside .colaboratorFavorite {
+  display: block;
+  width: 80px;
+  height: 20px;
+  padding-top: 5px;
+}
+
+.colaborators .coreTemplate {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 10px;
-  padding-left: 1rem;
+  background-color: gray;
 }
 
-h2 {
-  padding-left: 1rem;
+.colaborators .coreInsideTemplate {
+  display: flex;
+  flex-direction: row;
+  font-size: smaller;
+}
+
+.colaborators .coreInsideTemplate .colaboratorIdTemplate {
+  display: block;
+  width: 30px;
+  height: 20px;
+  padding-top: 5px;
+}
+
+.colaborators .coreInsideTemplate .colaboratorNameTemplate {
+  display: block;
+  width: 150px;
+  height: 20px;
+  padding-top: 5px;
+}
+
+.colaborators .coreInsideTemplate .colaboratorEmailTemplate {
+  display: block;
+  width: 200px;
+  height: 20px;
+  padding-top: 5px;
+}
+
+.colaborators .coreInsideTemplate .colaboratorRoleTemplate {
+  display: block;
+  width: 100px;
+  height: 20px;
+  padding-top: 5px;
+}
+
+.colaborators .coreInsideTemplate .colaboratorStatusTemplate {
+  display: block;
+  width: 80px;
+  height: 20px;
+  padding-top: 5px;
+}
+
+.colaborators .coreInsideTemplate .colaboratorCreationTemplate {
+  display: block;
+  width: 150px;
+  height: 20px;
+  padding-top: 5px;
+}
+
+.colaborators .coreInsideTemplate .colaboratorUpdateTemplate {
+  display: block;
+  width: 150px;
+  height: 20px;
+  padding-top: 5px;
+}
+
+.colaborators .coreInsideTemplate .colaboratorDeliveriesTemplate {
+  display: block;
+  width: 100px;
+  height: 20px;
+  padding-top: 5px;
+}
+
+.colaborators .coreInsideTemplate .colaboratorFavoriteTemplate {
+  display: block;
+  width: 80px;
+  height: 20px;
+  padding-top: 5px;
 }

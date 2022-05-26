@@ -5,14 +5,18 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ColaboratorsComponent } from './components/colaborators/colaborators.component';
 import { ColaboratorDetailComponent } from './components/colaborator-detail/colaborator-detail.component';
 import { ColaboratorAddComponent } from './components/colaborator-add/colaborator-add.component';
+import { ColaboratorFavoritesComponent } from './components/colaborator-favorites/colaborator-favorites.component';
+import { ChangePasswordComponent } from './components/change-password/change-password.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/start', pathMatch: 'full' },
-  { path: 'start', component: StartPageComponent },
+  { path: '', redirectTo: '/colaborators', pathMatch: 'full' },
+  { path: 'change', component: ChangePasswordComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'colaborators', component: ColaboratorsComponent },
+  { path: 'add', component: ColaboratorAddComponent },
+  { path: 'favorites', component: ColaboratorFavoritesComponent },
   { path: 'detail/:id', component: ColaboratorDetailComponent },
-  { path: 'add', component: ColaboratorAddComponent }
+  { path: 'colaborators', component: ColaboratorsComponent },
+  { path: '**', redirectTo: '/start', pathMatch: 'full' }
 ];
 
 @NgModule({

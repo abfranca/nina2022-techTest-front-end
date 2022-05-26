@@ -17,6 +17,7 @@ export class ColaboratorAddComponent implements OnInit {
 
   roles: Role[] = [];
   statuses: Status[] = [];
+  favorited: boolean = false;
 
   getRoles(): void {
     this.roleService.getRoles()
@@ -44,7 +45,8 @@ export class ColaboratorAddComponent implements OnInit {
       deliveriesInProgress: deliveriesInProgress || 0,
       createdAt: date,
       updatedAt: date,
-      deleted: false
+      deleted: false,
+      favorited: this.favorited
     };
     this.colaboratorService.createColaborator(colaborator)
       .subscribe(() => this.router.navigate(['colaborators']));

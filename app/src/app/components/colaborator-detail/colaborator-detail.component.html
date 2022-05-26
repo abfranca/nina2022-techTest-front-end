@@ -1,40 +1,72 @@
-<div *ngIf="colaborator" class="form">
-    <div class="item">
-        <h2>Colaborator Details</h2>
-        <div class="checkbox">
-            <label for="editing">Edit</label>
-            <input type="checkbox" id="editing" [(ngModel)]="changing">
+<div class="container" *ngIf="colaborator">
+    <h2>
+        Colaborator Details
+    </h2>
+    <div class="edit">
+        <input type="checkbox" id="editing" [(ngModel)]="changing">
+        <label for="editing">
+            Edit
+        </label>
+    </div>
+    <div class="information">
+        <div class="labels">
+            <label>
+                ID:
+            </label>
+            <label>
+                Name:
+            </label>
+            <label>
+                Email:
+            </label>
+            <label>
+                Role:
+            </label>
+            <label>
+                Status:
+            </label>
+            <label>
+                Admission:
+            </label>
+            <label>
+                Last update:
+            </label>
+            <label>
+                Total deliveries:
+            </label>
+            <label>
+                Deliveries in progress:
+            </label>
+            <label>
+                Favorite:
+            </label>
+        </div>
+        <div class="values">
+            <input class="inactive" type="text" [(ngModel)]="colaborator.id" readonly />
+            <input class="inactive" *ngIf="!changing" [(ngModel)]="colaborator.name" readonly />
+            <input *ngIf="changing" [(ngModel)]="colaborator.name" placeholder="name" />
+            <input class="inactive" type="text" [(ngModel)]="colaborator.email" readonly />
+            <input class="inactive" *ngIf="!changing" type="text" [(ngModel)]="colaborator.role" readonly />
+            <select *ngIf="changing" id="new-role" [(ngModel)]="colaborator.role">
+                <option [value]="role.name" *ngFor="let role of roles">
+                    {{role.name}}
+                </option>
+            </select>
+            <input class="inactive" *ngIf="!changing" type="text" [(ngModel)]="colaborator.status" readonly />
+            <select *ngIf="changing" id="new-status" [(ngModel)]="colaborator.status">
+                <option [value]="status.name" *ngFor="let status of statuses">{{status.name}}</option>
+            </select>
+            <input class="inactive" type="text" [(ngModel)]="colaborator.createdAt" readonly />
+            <input class="inactive" type="text" [(ngModel)]="colaborator.updatedAt" readonly />
+            <input class="inactive" type="text" [(ngModel)]="colaborator.deliveriesMade" readonly />
+            <input class="inactive" type="text" [(ngModel)]="colaborator.deliveriesInProgress" readonly />
+            <input type="checkbox" [(ngModel)]="colaborator.favorited" (change)="save()">
         </div>
     </div>
-
-    <div class="item"><span>ID: </span>{{colaborator.id}}</div>
-    <div class="item" *ngIf="!changing"><span>Name: </span>{{colaborator.name}}</div>
-    <div class="item" *ngIf="changing">
-        <label for="new-name">Name: </label>
-        <input id="new-name" [(ngModel)]="colaborator.name" placeholder="name" />
-    </div>
-    <div class="item"><span>Email: </span>{{colaborator.email}}</div>
-    <div class="item" *ngIf="!changing"><span>Role: </span>{{colaborator.role}}</div>
-    <div class="item" *ngIf="changing">
-        <label for="new-role">Role: </label>
-        <select id="new-role" [(ngModel)]="colaborator.role">
-            <option [value]="role.name" *ngFor="let role of roles">{{role.name}}</option>
-        </select>
-    </div>
-    <div class="item" *ngIf="!changing"><span>Status: </span>{{colaborator.status}}</div>
-    <div class="item" *ngIf="changing">
-        <label for="new-status">Status: </label>
-        <select id="new-status" [(ngModel)]="colaborator.status">
-            <option [value]="status.name" *ngFor="let status of statuses">{{status.name}}</option>
-        </select>
-    </div>
-    <div class="item"><span>Admission: </span>{{colaborator.createdAt}}</div>
-    <div class="item"><span>Last update: </span>{{colaborator.updatedAt}}</div>
-    <div class="item"><span>Total deliveries: </span>{{colaborator.deliveriesMade}}</div>
-    <div class="item"><span>Deliveries in progress: </span>{{colaborator.deliveriesInProgress}}</div>
-    <div class="item">
-        <button type="button" (click)="goBack()">Back</button>
-        <button *ngIf="!changing" type="button" class="action-button" (click)="delete()">Delete</button>
-        <button *ngIf="changing" type="button" class="action-button" (click)="save()">Save</button>
-    </div>
+    <button *ngIf="!changing" type="button" class="action-button" (click)="delete()">
+        Delete
+    </button>
+    <button *ngIf="changing" type="button" class="action-button" (click)="save()">
+        Save
+    </button>
 </div>

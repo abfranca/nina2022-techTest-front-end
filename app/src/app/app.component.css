@@ -1,18 +1,61 @@
-/* AppComponent's private CSS styles */
-h1 {
-    color: black;
-    padding-left: 1rem;
-}
-
-h1:hover {
-    text-decoration: underline;
-    color: white;
-    cursor: pointer;
-}
-
-.container {
+.topBox {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     background-color: #731aeb;
+}
+
+.topBox h1 {
+    margin: 10px;
+    padding: 20px;
+    color: black;
+}
+
+.topBox h1:hover {
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.topBox .buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.topBox .buttons button {
+    margin: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: white;
+    color: black;
+    border-color: aqua;
+}
+
+.topBox .buttons button:hover {
+    background-color: aqua;
+    color: black;
+    border-color: white;
+    border-radius: 10%;
+    cursor: pointer;
+}
+
+.loginContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pagesContainer {
+    display: flex;
+    flex-direction: row;
+    background-color: beige;
+}
+
+.pagesContainer .sidebar {
+    min-width: max-content;
+}
+
+.pagesContainer .sidebar {
+    min-width: max-content;
 }

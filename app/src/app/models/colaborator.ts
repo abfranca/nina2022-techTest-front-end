@@ -9,4 +9,5 @@ export interface Colaborator {
     deliveriesMade: number;
     deliveriesInProgress: number;
     deleted: boolean;
+    favorited: boolean;
 }

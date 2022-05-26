@@ -1,26 +1,22 @@
-nav a {
-    padding: 1rem;
-    text-decoration: none;
-    margin-top: 10px;
-    display: inline-block;
-    background-color: #e8e8e8;
-    color: #3d3d3d;
-    border-radius: 4px;
-}
-
-nav a:hover {
-    color: white;
-    background-color: #42545C;
-}
-
-nav a.active {
-    background-color: black;
-}
-
 .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    min-height: 480px;
+}
+
+.container button {
+    margin: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 0;
+    background-color: #731aeb;
+    color: black;
+    border-color: white;
+}
+
+.container button:hover {
+    color: white;
+    border-color: black;
+    border-radius: 10%;
+    cursor: pointer;
 }

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { max, min } from 'rxjs';
 import { Role } from 'src/app/models/role';
 import { Status } from 'src/app/models/status';
 import { RoleService } from 'src/app/services/role-service/role.service';
@@ -39,10 +38,23 @@ export class ColaboratorsComponent implements OnInit {
   maxDeliveries: number = 0;
   sorting: boolean = false;
   sortCriteria: number = 1;
+  itemsPerPage: number = 10;
+  pageToShow: number = 1;
+  totalPages: number = 1;
 
   getColaborators(): void {
     this.colaboratorService.getColaborators()
-      .subscribe(colaborators => this.colaborators = colaborators.filter(this.filterByOptions).sort(this.sortByOption));
+      .subscribe(colaborators => {
+        var totalColaborators = colaborators.filter(this.filterByOptions).sort(this.sortByOption);
+        this.totalPages = Math.ceil(totalColaborators.length / this.itemsPerPage);
+        if (this.totalPages < this.pageToShow) {
+          this.pageToShow = this.totalPages;
+        }
+        if (this.pageToShow == 0 && this.totalPages > 0) {
+          this.pageToShow = 1;
+        }
+        this.colaborators = totalColaborators.slice((this.pageToShow - 1) * this.itemsPerPage, this.itemsPerPage * this.pageToShow);
+      });
   }
 
   filterByOptions = (colaborator: Colaborator) => {
@@ -137,17 +149,17 @@ export class ColaboratorsComponent implements OnInit {
     } else if (this.sortCriteria == 7) {
       var dateA = new Date(`${colaboratorA.updatedAt.slice(6, 10)}-${colaboratorA.updatedAt.slice(3, 5)}-${colaboratorA.updatedAt.slice(0, 2)}T${colaboratorA.updatedAt.slice(11, 13)}:${colaboratorA.updatedAt.slice(14, 16)}:${colaboratorA.updatedAt.slice(17)}`);
       var dateB = new Date(`${colaboratorB.updatedAt.slice(6, 10)}-${colaboratorB.updatedAt.slice(3, 5)}-${colaboratorB.updatedAt.slice(0, 2)}T${colaboratorB.updatedAt.slice(11, 13)}:${colaboratorB.updatedAt.slice(14, 16)}:${colaboratorB.updatedAt.slice(17)}`)
-      if (dateA.getTime() < dateB.getTime()) {
+      if (dateA.getTime() > dateB.getTime()) {
         response = -1;
-      } else if (dateA.getTime() > dateB.getTime()) {
+      } else if (dateA.getTime() < dateB.getTime()) {
         response = 1;
       } else {
         response = 0;
       }
     } else if (this.sortCriteria == 8) {
-      if (colaboratorA.deliveriesMade < colaboratorB.deliveriesMade) {
+      if (colaboratorA.deliveriesMade > colaboratorB.deliveriesMade) {
         response = -1;
-      } else if (colaboratorA.deliveriesMade > colaboratorB.deliveriesMade) {
+      } else if (colaboratorA.deliveriesMade < colaboratorB.deliveriesMade) {
         response = 1;
       } else {
         response = 0;
@@ -172,6 +184,32 @@ export class ColaboratorsComponent implements OnInit {
   getStatuses(): void {
     this.statusService.getStatuses()
       .subscribe(statuses => this.statuses = statuses);
+  }
+
+  decreasePage(): void {
+    if (this.pageToShow > 1) {
+      this.pageToShow--;
+      this.getColaborators();
+    }
+  }
+
+  increasePage(): void {
+    if (this.pageToShow < this.totalPages) {
+      this.pageToShow++;
+      this.getColaborators();
+    }
+  }
+
+  resetPage(): void {
+    this.pageToShow = 1;
+  }
+
+  save(colaborator: Colaborator): void {
+    if (colaborator) {
+      colaborator.updatedAt = new Date().toLocaleString();
+      this.colaboratorService.updateColaborator(colaborator)
+        .subscribe(() => { });
+    }
   }
 
   constructor(

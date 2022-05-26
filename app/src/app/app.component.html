@@ -1,5 +1,20 @@
-<div class="container">
-    <h1 routerLink="/start">{{title}}</h1>
-    <button>Logout</button>
+<div class="topBox">
+    <h1 routerLink="/colaborators">
+        {{title}}
+    </h1>
+    <div class="buttons" *ngIf="logged">
+        <button (click)="logout()">
+            Logout
+        </button>
+        <button routerLink="/change">
+            Change Password
+        </button>
+    </div>
 </div>
-<router-outlet></router-outlet>
+<div class="loginContainer" *ngIf="!logged">
+    <app-login (loginResponse)="onLogin($event)"></app-login>
+</div>
+<div class="pagesContainer" *ngIf="logged">
+    <app-start-page class="sidebar"></app-start-page>
+    <router-outlet class="mainPage"></router-outlet>
+</div>

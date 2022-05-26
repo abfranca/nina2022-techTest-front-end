@@ -1,0 +1,57 @@
+.container {
+    display: flex;
+    margin-top: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 30px;
+    flex-direction: column;
+    background-color: aqua;
+}
+
+.container h2 {
+    color: #731aeb;
+}
+
+.container .information {
+    display: flex;
+    flex-direction: row;
+}
+
+.container .labels {
+    display: flex;
+    flex-direction: column;
+}
+
+.container .labels label {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.container .labels button {
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #731aeb;
+    color: black;
+    border-color: white;
+}
+
+.container .labels button:hover {
+    background-color: white;
+    border-color: #731aeb;
+    border-radius: 10%;
+    cursor: pointer;
+}
+
+.container .values {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.container .values input {
+    margin-bottom: 10px;
+}
+
+.container .values span {
+    margin-top: 5px;
+}

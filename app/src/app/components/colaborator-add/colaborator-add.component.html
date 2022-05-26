@@ -1,47 +1,58 @@
-<div class="form">
-    <h2>Add a new colaborator</h2>
-    <div class="item">
-        <label for="new-name">Name: </label>
-        <input id="new-name" #colaboratorName />
-    </div>
-    <div class="item">
-        <label for="new-email">Email: </label>
-        <input id="new-email" #colaboratorEmail />
-    </div>
-    <div class="item">
-        <label for="new-role">Role: </label>
-        <select id="new-role" #colaboratorRole>
-            <option [value]="role.name" *ngFor="let role of roles">{{role.name}}</option>
-        </select>
-    </div>
-    <div class="item">
-        <label for="new-status">Status: </label>
-        <select id="new-status" #colcaboratorStatus>
-            <option [value]="status.name" *ngFor="let status of statuses">{{status.name}}</option>
-        </select>
-    </div>
-    <div class="item">
-        <label for="new-deliveriesMade">Deliveries made: </label>
-        <input id="new-deliveriesMade" #colaboratorDeliveriesMade />
-    </div>
-    <div class="item">
-        <label for="new-deliveriesInProgress">Deliveries in progress: </label>
-        <input id="new-deliveriesInProgress" #colaboratorDeliveriesInProgress />
-    </div>
+<div class="container">
+    <h2>
+        New colaborator register
+    </h2>
+    <div class="information">
+        <div class="labels">
+            <label for="new-name">
+                Name:
+            </label>
+            <label for="new-email">
+                Email:
+            </label>
+            <label for="new-role">
+                Role:
+            </label>
+            <label for="new-status">
+                Status:
+            </label>
+            <label for="new-deliveriesMade">
+                Deliveries made:
+            </label>
+            <label for="new-deliveriesInProgress">
+                Deliveries in progress:
+            </label>
+            <label for="favorited">
+                Favorite:
+            </label>
+        </div>
+        <div class="values">
+            <input type="text" id="new-name" #colaboratorName />
+            <input type="email" id="new-email" #colaboratorEmail />
+            <select id="new-role" #colaboratorRole>
+                <option [value]="role.name" *ngFor="let role of roles">
+                    {{role.name}}
+                </option>
+            </select>
+            <select id="new-status" #colcaboratorStatus>
+                <option [value]="status.name" *ngFor="let status of statuses">
+                    {{status.name}}
+                </option>
+            </select>
+            <input type="number" min="0" id="new-deliveriesMade" #colaboratorDeliveriesMade />
+            <input type="number" min="0" id="new-deliveriesInProgress" #colaboratorDeliveriesInProgress />
+            <input class="checkbox" type="checkbox" id="favorited" [(ngModel)]="favorited">
+        </div>
 
-    <div class="item">
-        <button type="button" (click)="goBack()">
-            Back
-        </button>
-        <button type="button" class="add-button" (click)="add(
-            colaboratorName.value,
-            colaboratorEmail.value,
-            colaboratorRole.value,
-            colcaboratorStatus.value,
-            colaboratorDeliveriesMade.value,
-            colaboratorDeliveriesInProgress.value
-        )">
-            Add Colaborator
-        </button>
     </div>
+    <button type="button" (click)="add(
+        colaboratorName.value,
+        colaboratorEmail.value,
+        colaboratorRole.value,
+        colcaboratorStatus.value,
+        colaboratorDeliveriesMade.value,
+        colaboratorDeliveriesInProgress.value
+    )">
+        Finish
+    </button>
 </div>

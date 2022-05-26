@@ -1,24 +1,73 @@
-.form {
-    padding-left: 1rem;
-    padding-right: 1rem;
+.container {
+    margin-top: 5px;
     display: flex;
     flex-direction: column;
-    max-width: 420px;
 }
 
-.checkbox {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+.container h2 {
+    color: #731aeb;
 }
 
-.item {
+.container .edit {
     display: flex;
     flex-direction: row;
+}
+
+.container .edit input {
+    margin-left: 0;
+}
+
+.container .edit label {
+    margin-left: 5px;
+}
+
+.container .information {
+    display: flex;
+    flex-direction: row;
+}
+
+.container .information .labels {
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
-.action-button {
-    margin-right: 0px;
+.container .information .values {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container .information .values .inactive {
+    background-color: beige;
+}
+
+.container .information .values input {
+    align-self: flex-start;
+    margin-bottom: 5px;
+    margin-left: 0;
+}
+
+.container .information .values select {
+    align-self: flex-start;
+    margin-bottom: 5px;
+    margin-left: 0;
+}
+
+.container button {
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #731aeb;
+    color: black;
+    border-color: white;
+    width: fit-content;
+}
+
+.container button:hover {
+    background-color: white;
+    border-color: #731aeb;
+    border-radius: 10%;
+    cursor: pointer;
 }

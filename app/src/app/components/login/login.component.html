@@ -1,1 +1,25 @@
-<p>login works!</p>
+<div class="container">
+    <h2>
+        Wellcome!
+    </h2>
+    <div class="information">
+        <div class="labels">
+            <label for="email">
+                E-mail:
+            </label>
+            <label for="password">
+                Password:
+            </label>
+            <button type="button" (click)="login(loginEmail.value, loginPassword.value)">
+                Login
+            </button>
+        </div>
+        <div class="values">
+            <input type="email" id="email" #loginEmail />
+            <input type="password" id="password" #loginPassword />
+            <span *ngIf="fail">
+                Wrong e-mail or password.
+            </span>
+        </div>
+    </div>
+</div>

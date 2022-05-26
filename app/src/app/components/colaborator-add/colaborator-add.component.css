@@ -1,18 +1,56 @@
-.form {
-    padding-left: 1rem;
-    padding-right: 1rem;
+.container {
+    margin-top: 5px;
     display: flex;
     flex-direction: column;
-    max-width: 420px;
 }
 
-.item {
+.container h2 {
+    color: #731aeb;
+}
+
+.container .information {
     display: flex;
     flex-direction: row;
+}
+
+.container .information .labels {
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
     margin-bottom: 10px;
 }
 
-.add-button {
-    margin-right: 0px;
+.container .information .values {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container .information .values input {
+    margin-bottom: 10px;
+}
+
+.container .information .values select {
+    margin-bottom: 10px;
+}
+
+.container .information .values .checkbox {
+    align-self: start;
+    margin-left: 0;
+}
+
+.container button {
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #731aeb;
+    color: black;
+    border-color: white;
+    width: fit-content;
+}
+
+.container button:hover {
+    background-color: white;
+    border-color: #731aeb;
+    border-radius: 10%;
+    cursor: pointer;
 }
