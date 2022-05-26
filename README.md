@@ -3,9 +3,9 @@ See ./specs.pdf for the project requisites.
 
 ### How to use
 - Open ./server/
-- Type in terminal "npm run start"
+- Type in terminal "npm install" and then "npm run start"
 - Open ./app/
-- Type in terminal "ng serve --open"
+- Type in terminal "npm install" and then "ng serve --open"
 - Use admin@ninamob.com as login
 - Use admiNina as password
 - Have fun!
